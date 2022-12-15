@@ -1,0 +1,23 @@
+*{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+html{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loginForm{
+    width: min(500px, 90vw);
+    height: 150px;
+    border: black 1px solid;
+}
+
+.input,
+.submit-btn{
+   width: 70%;
+   margin: 5px;
+}
+
