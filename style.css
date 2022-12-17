@@ -1,23 +1,82 @@
-*{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+* {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
-html{
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+button,
+input,
+select {
+  font-family: inherit;
+  font-size: 100%;
+  width: 150px;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: transparent;
+  border: 0.5px solid rgba(0, 0, 0, 0.5);
+
 }
 
-.loginForm{
-    width: min(500px, 90vw);
-    height: 150px;
-    border: black 1px solid;
+input{
+    padding-left: 7px;
+    overflow: hidden;
 }
 
-.input,
-.submit-btn{
-   width: 70%;
-   margin: 5px;
+label{
+    font-size: larger;
 }
 
+html {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(225, 225, 225, 0.5);
+}
+
+h1 {
+  text-align: center;
+  padding-top: 10px;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+button {
+  color: rgba(0, 0, 0, 0.7);
+  font-size: larger;
+  padding: 5px;
+}
+
+button:hover,
+input:hover {
+  background-color: rgba(255, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+input:focus {
+  background-color: rgba(0, 157, 255, 0.1);
+}
+
+label:hover {
+  cursor: pointer;
+}
+.button-holder {
+  text-align: center;
+  padding-bottom: 5px;
+}
+
+.input-holder {
+  text-align: center;
+}
+
+.loginForm {
+  width: min(500px, 90vw);
+  height: 20%;
+  border: rgba(0, 0, 0, 0.5) 1px solid;
+  background-color: rgb(243, 243, 243);
+}
+
+.input {
+  width: 70%;
+  margin: 5px;
+  color: rgba(0, 0, 0, 0.6);
+}
