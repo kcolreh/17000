@@ -20,6 +20,7 @@ form {
   border-radius: 20px;
   padding: 10px;
   background-color: rgba(255, 238, 227, 0.7);
+  box-shadow: 0 0 10px rgba(214, 157, 168, 0.65);;
 }
 
 input {
