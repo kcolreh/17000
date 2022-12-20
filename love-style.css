@@ -1,92 +1,143 @@
-* {
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+:root {
+  --clr-primary-800: rgba(76, 0, 19, 1);
+  --clr-primary-600: rgb(89, 0, 22);
+  --clr-primary-400: rgb(128, 0, 32);
+  --clr-secondary-200: rgb(255, 221, 192);
+  --clr-neutral-000: rgb(255, 255, 255);
+
+  --ff-primary: "Monaco", monospace;
+  --ff-accent: "Andale Mono", monospace;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
   cursor: url(https://cur.cursors-4u.net/symbols/sym-1/sym49.cur), auto !important;
 }
 
-html {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
+body {
+  font-family: var(--ff-primary);
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
-h1 {
-  font-size: 50px;
-  text-shadow: 4px 5px 0px rgba(255, 255, 255, 0.2);
-  color: white;
-}
-
-.text,
-.time-together,
-.time-till-meeting,
-.boys-age {
-  color: white;
-  font-size: 50px;
-  padding: 15px;
-  text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.2);
-}
-
-.love-text {
-  color: rgba(76, 0, 19, 1);
-  font-size: 50px;
-}
-
-.first-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 500px;
-  background-color: rgba(76, 0, 19, 1);
-}
-
-.second-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 500px;
-  background-color: rgb(89, 0, 22);
-}
-
-.third-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 500px;
-  background-color: rgb(128, 0, 32);
-}
-
-.fourth-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 500px;
-  background-color: rgb(255, 221, 192);
-  font-size: 50px;
-}
-
-.fifth-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 500px;
-  background-color: rgb(255, 255, 255);
-  font-size: 50px;
-}
-button {
-  height: 5vh;
-  width: 5vw;
+body,
+h1,
+h2,
+h3,
+span {
   margin: 0;
-  padding: 0;
-  padding-left: 20px;
-  background: transparent;
+}
+
+h1,
+h2 {
+  font-family: var(--ff-accent);
+  line-height: 1;
+}
+
+.text-center {
+  text-align: center;
+  padding: 3rem;
+}
+
+section,
+footer {
+  padding: 3rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.button-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  height: 2rem;
+  width: 6rem;
+  background-color: var(--clr-primary-400);
+  color: var(--clr-neutral-000);
   border: none;
-  color: white;
-  position: fixed;
-  cursor: url(https://ani.cursors-4u.net/symbols/sym-8/sym761.ani),
-    url(https://ani.cursors-4u.net/symbols/sym-8/sym761.png), auto !important;
+  animation: moveInBottom 1s ease-out;
+}
+
+button:hover {
+  box-shadow: 1px 1px 3px var(--clr-primary-600);
+  font-weight: 900;
+  font-size: 1rem;
+}
+
+button:active {
+  background-color: var(--clr-primary-600);
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+}
+
+#heart-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+}
+
+.heart {
+  z-index: 999;
+  animation: heartfade 6s linear;
+  position: relative;
+}
+.heart:before,
+.heart:after {
+  content: "";
+  background-color: #fc2a62;
+  position: absolute;
+  height: 30px;
+  width: 45px;
+  border-radius: 15px 0px 0px 15px;
+}
+.heart:before {
+  transform: rotate(45deg);
+}
+.heart:after {
+  left: 10.5px;
+  transform: rotate(135deg);
+}
+
+@keyframes heartfade {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.container-1 {
+  background-color: var(--clr-primary-800);
+  color: var(--clr-neutral-000);
+}
+
+.container-2 {
+  background-color: var(--clr-primary-600);
+  color: var(--clr-neutral-000);
+}
+
+.container-3 {
+  background-color: var(--clr-primary-400);
+  color: var(--clr-neutral-000);
+}
+
+.container-4 {
+  background-color: var(--clr-secondary-200);
+  color: var(--clr-primary-800);
+}
+
+.container-5 {
+  background-color: var(--clr-neutral-000);
+  color: var(--clr-primary-800);
 }
