@@ -34,6 +34,7 @@ h1,
 h2 {
   font-family: var(--ff-accent);
   line-height: 1;
+  text-align: center;
 }
 
 h1{
@@ -45,15 +46,25 @@ h1{
   padding: 3rem;
 }
 
+span{
+  width: 50%;
+}
+
+
 section{
   padding: 3rem;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
 }
 
-.time-holder{
-  width: 50%;
+.totalTimeC{
+  text-align: center;
+}
+
+.time-holder,
+.title-holder{
+  width: 40%;
   font-size: 1.1rem;
 }
 

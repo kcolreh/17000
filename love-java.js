@@ -1,12 +1,36 @@
 const heartBtn = document.querySelector('.heart-btn');
 const container = document.querySelector('#heart-container');
-const enterDateBtn = document.querySelector('#enter-date')
+const enterDateBtn = document.querySelector('#enter-date');
+const totalTimeTogether = document.querySelector('#totalTime');
+const totalTimeBoys = document.querySelector('#totalTimeBoys');
+
+const dString = "August, 24, 2019";
+const otherString = "June, 14, 2021";
+
+let d1 = new Date(dString);
+let d2 = new Date();
+let d3 = new Date(otherString);
 
 let btnscore = 0;
 
 heartBtn.addEventListener('click', createHeart);
 enterDateBtn.addEventListener('click', pickDate)
 
+function objectToString(){
+    let date = '2019-08-24';
+    dateDiff(date)
+    const objString = JSON.stringify(objDate);
+    const cleanString = objString.replaceAll('"', ' ').replaceAll(',', ' ').replaceAll('','').replace('{','').replace('}','');
+    totalTimeTogether.textContent = cleanString;
+}
+
+function objectToStringCat(){
+    let date = '2021-06-14';
+    dateDiff(date)
+    const objString = JSON.stringify(objDate);
+    const cleanString = objString.replaceAll('"', ' ').replaceAll(',', ' ').replaceAll('','').replace('{','').replace('}','');
+    totalTimeBoys.textContent = cleanString;
+}
 
 function createHeart() {
     for (let i = 0; i < 1; i++) {
@@ -20,13 +44,6 @@ function createHeart() {
         }
     }
 }
-
-const dString = "August, 24, 2019";
-const otherString = "June, 14, 2021";
-
-let d1 = new Date(dString);
-let d2 = new Date();
-let d3 = new Date(otherString);
 
 function inSeconds(d1, d2, d3) {
     let t2 = d2.getTime();
@@ -112,7 +129,6 @@ function inYears(d1, d2, d3) {
     CatResultDisplay.textContent = catResult;
 }
 
-
 function pickDate(){
     let dString = prompt("Babu, please enter the date (August, 24, 2019)");
     let d1 = new Date(dString);
@@ -145,6 +161,33 @@ function pickDate(){
     resultDisplayMonths.textContent = resultMonths;
 }
 
+function dateDiff(date) {
+    date = date.split('-');
+    let today = new Date();
+    let year = today.getFullYear();
+    let month = today.getMonth() + 1;
+    let day = today.getDate();
+    let yy = parseInt(date[0]);
+    let mm = parseInt(date[1]);
+    let dd = parseInt(date[2]);
+    let years, months, days;
+
+    // months
+    months = month - mm;
+    if (day < dd) {
+        months = months - 1;
+    }
+    // years
+    years = year - yy;
+    if (month * 100 + day < mm * 100 + dd) {
+        years = years - 1;
+        months = months + 12;
+    }
+    // days
+    days = Math.floor((today.getTime() - (new Date(yy + years, mm + months - 1, dd)).getTime()) / (24 * 60 * 60 * 1000));
+    //
+    return objDate = {years: years, months: months, days: days};
+}
 
 inSeconds(d1, d2, d3);
 inMinutes(d1, d2, d3);
@@ -153,3 +196,5 @@ inDays(d1, d2, d3);
 inWeeks(d1, d2, d3);
 inMonths(d1, d2, d3);
 inYears(d1, d2, d3);
+objectToString();
+objectToStringCat();
