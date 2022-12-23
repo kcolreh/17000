@@ -4,21 +4,42 @@
     <meta charset="UTF-8" />
     <title>Jenny</title>
     <link rel="stylesheet" href="./style.css" />
-    <script src="./java.js"></script>
+    <script src="./java.js" defer></script>
   </head>
   <body>
     <form action="love.html" method="Get" class="loginForm">
+      <h1>Log in</h1>
       <p class="input-holder">
         <label class="input" for="username">Username</label>
-        <input class="input" name="username" id="username" type="text" placeholder="Username"/>
+        <input
+          class="input"
+          name="username"
+          id="username"
+          type="text"
+          placeholder="Username"
+          required
+          pattern="[Bb]abu"
+          title="Wrong Username"
+        />
       </p>
       <p class="input-holder">
         <label class="input" for="password">Password</label>
-        <input class="input" name="password" id="password" type="password" placeholder="Password"/>
+        <input
+          class="input"
+          name="password"
+          id="password"
+          type="password"
+          placeholder="Password"
+          required
+          pattern="17000"
+          title="Wrong Password"
+        />
       </p>
       <p class="button-holder">
         <button class="submit-btn" type="submit">Login</button>
       </p>
     </form>
+    <button class="hintC" id="hintID"><span class="btn-text">Need a hint?</span></button>
+    <div class="hint-text"><p id="hint"></p></div>
   </body>
 </html>
