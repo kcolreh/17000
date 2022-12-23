@@ -5,7 +5,6 @@ let click = 0;
 
 hintBtn.addEventListener('click', () => {
     click++
-    console.log(click)
     if (click === 1) {
         hint.textContent = 'What is my nickname for Jennu?'
     } else if (click === 2) {

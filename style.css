@@ -109,7 +109,7 @@ input::placeholder {
 input:focus {
   background-color: var(--clr-secondary-200);
   outline: none;
-  color: var(--clr-primary-400);
+  color: var(--clr-neutral-000);
 }
 
 .heart {
@@ -139,6 +139,10 @@ button.hintC {
   background: none;
   border: none;
   color: var(--clr-primary-400);
+}
+
+button.hintC:active{
+  color: var(--clr-secondary-200);
 }
 
 .btn-text,
