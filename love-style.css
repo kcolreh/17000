@@ -67,6 +67,42 @@ input{
   margin-right: 10px;
 }
 
+.image-container{
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  width: 100%;
+  height: 150px;
+  
+}
+
+img{
+  height: 150px;
+  width: 150px;
+  margin: 5px;
+}
+
+img.image-1{
+  width: 140px;
+}
+
+img.image-2{
+  width: 300px;
+}
+
+img.image-3,
+img.image-4{
+  width: 105px;
+}
+
+img.image-5{
+  width: 120px;
+}
+
+img.image-6{
+  width: 160px;
+}
+
 .totalTimeC{
   text-align: center;
 }
