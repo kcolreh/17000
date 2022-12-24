@@ -1,8 +1,8 @@
 const heartBtn = document.querySelector('.heart-btn');
 const container = document.querySelector('#heart-container');
-const enterDateBtn = document.querySelector('#enter-date');
+const enterDateBtn = document.querySelector('#enter-date2');
 const totalTimeTogether = document.querySelector('#totalTime');
-const totalTimeBoys = document.querySelector('#totalTimeBoys');
+const totalTimeBoys = document.querySelector('#totalTimeBoys'); 
 
 const dString = "August, 24, 2019";
 const otherString = "June, 14, 2021";
@@ -20,7 +20,7 @@ function objectToString(){
     let date = '2019-08-24';
     dateDiff(date)
     const objString = JSON.stringify(objDate);
-    const cleanString = objString.replaceAll('"', ' ').replaceAll(',', ' ').replaceAll('','').replace('{','').replace('}','');
+    const cleanString = objString.replaceAll('"', ' ').replaceAll(',', ' ').replaceAll('','').replace('{','').replace('}','').replaceAll(':', ': ');
     totalTimeTogether.textContent = cleanString;
 }
 
@@ -28,7 +28,7 @@ function objectToStringCat(){
     let date = '2021-06-14';
     dateDiff(date)
     const objString = JSON.stringify(objDate);
-    const cleanString = objString.replaceAll('"', ' ').replaceAll(',', ' ').replaceAll('','').replace('{','').replace('}','');
+    const cleanString = objString.replaceAll('"', ' ').replaceAll(',', ' ').replaceAll('','').replace('{','').replace('}','').replaceAll(':', ': ');
     totalTimeBoys.textContent = cleanString;
 }
 
@@ -130,7 +130,8 @@ function inYears(d1, d2, d3) {
 }
 
 function pickDate(){
-    let dString = prompt("Babu, please enter the date (August, 24, 2019)");
+    let pickedDate = document.getElementById('enter-date');
+    let dString = pickedDate.value;
     let d1 = new Date(dString);
     let d2 = new Date();
     let d1Y = d1.getFullYear();
